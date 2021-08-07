@@ -37,6 +37,7 @@ const main = async () => {
   console.time("lol");
   asyncPromiseFunction3s();
   asyncPromiseFunction7s();
+  // await Promise.all([asyncPromiseFunction3s(),asyncPromiseFunction7s()]);
   syncFunc1();
   console.timeEnd("lol");
   // bấm giờ, mất 7s
@@ -50,3 +51,4 @@ main();
 // có thể await async function đó bằng callback hoặc trả về 1 promise (thực sự vẫn là callback)
 // với TH trả về 1 promise: muốn nó non-block thì ko dùng await, muốn nó block (wait) thì dùng await
 // process trong setTimeout có thể chạy parallel, nghĩa là nó chính là async chứ ko phải là delay sync
+// does promise all parallel: https://anotherdev.xyz/promise-all-runs-in-parallel/
